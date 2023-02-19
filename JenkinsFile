@@ -4,7 +4,7 @@ pipeline {
         stage('Katalon Test') {
             steps {
                 dir('C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj') {
-                    sh '"C:\\Katalon_Studio_Windows_64-7.9.1\\katalon.exe" -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/Test Suite"'
+                    bat '"C:\\Katalon_Studio_Windows_64-7.9.1\\katalon.exe" -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/Test Suite"'
                 }
             }
         }
