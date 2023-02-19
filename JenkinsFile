@@ -9,7 +9,7 @@ pipeline {
         }
        stage('Execute Katalon Tests') {
     steps {
-        bat katalonc -noSplash -runMode=console -projectPath="C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj" -retry=0 -testSuitePath=\"Test Suites/Test suite"\ -executionProfile="default" -browserType="Web Service" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
+        bat katalonc -noSplash -runMode=console -projectPath="C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj" -retry=0 -testSuitePath="Test Suites/Test suite" -executionProfile="default" -browserType="Web Service" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true
             }
         }
         stage('Hello Test') {
