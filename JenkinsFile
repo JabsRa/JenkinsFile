@@ -1,26 +1,11 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello Build') {
+        stage('Katalon Test') {
             steps {
-                echo 'Hello Build'
-            }
-        }
-       stage('Execute Katalon Tests') {
-    steps {
-           dir('"C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj') {
-                    sh '"C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/Your Test Suite"'
-                    }}
-        }
-        stage('Hello Test') {
-            steps {
-                echo 'Hello Test'
-            }
-        }
-        stage('Hello Release') {
-            steps {
-                echo 'Hello Release'
+                dir('path/to/katalon/project') {
+                    sh 'C:\\Users\\jabal\\git\\Katalon-Test -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/TestSuite1"'
+                }
             }
         }
     }
