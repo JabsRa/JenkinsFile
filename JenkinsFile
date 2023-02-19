@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Katalon Test') {
             steps {
-                dir('path/to/katalon/project') {
-                    sh 'C:\\Users\\jabal\\git\\Katalon-Test -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/TestSuite1"'
+                dir('C:\\Users\\jabal\\git\\Katalon-Test') {
+                    sh 'C:\\Users\\jabal\Downloads\\Compressed\\Katalon_Studio_Windows_64-8.1.0\\katalon.exe -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/TestSuite1"'
                 }
             }
         }
