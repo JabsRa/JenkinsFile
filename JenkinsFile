@@ -12,7 +12,7 @@ pipeline {
         steps {
            dir('"C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj') {
                     sh '"C:\\Users\\jabal\\git\\Katalon-Test\\LoyaltoQAassesment.prj -noSplash -runMode=console -projectPath="." -retry=0 -testSuitePath="Test Suites/Your Test Suite"'
-                    }
+                    }}
         }
         stage('Hello Test') {
             steps {
