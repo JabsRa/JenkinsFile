@@ -4,7 +4,7 @@ pipeline {
     environment {
         KATALON_HOME = "C:\\Users\\jabal\\Katalon Studio"
         PROJECT_PATH = "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\LoyaltoQAassesment.prj"
-        PDF_REPORT = " C:\\Program Files\\wkhtmltopdf\\bin"
+        PDF_REPORT = "C:\\Program Files\\wkhtmltopdf\\bin"
         TEST_SUITE_PATH = "Test Suites\\Test Suite"
         EXECUTION_PROFILE = "default"
         BROWSER_TYPE = "Web Service"
