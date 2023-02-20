@@ -27,7 +27,7 @@ pipeline {
     }
       post {
         always {
-            archiveArtifacts artifacts: 'C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\Reports\\'
+            archiveArtifacts artifacts: 'Reports/*'
         }
     }
 }
