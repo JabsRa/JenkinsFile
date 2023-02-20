@@ -1,32 +1,21 @@
 pipeline {
     agent any
     
+    environment {
+        KATALON_HOME = "C:\\Users\\jabal\\Katalon Studioo"
+        PROJECT_PATH = "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\LoyaltoQAassesment.prj"
+        TEST_SUITE_PATH = "Test Suites\\Test Suite"
+        EXECUTION_PROFILE = "default"
+        BROWSER_TYPE = "Web Service"
+    }
+    
     stages {
-        stage('Checkout') {
+        stage('Run Tests') {
             steps {
-                // Checkout the project from source control
-                checkout scm
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                // Build the Katalon project
-                sh 'katalonc -noSplash -runMode=console -projectPath="https://github.com/JabsRa/Katalon-Test/LoyaltoQAassesment.prj" -reportFolder="Reports" -testSuitePath="Test Suites/Test Suite" -browserType="Web Service" -retry=0 -statusDelay=15'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                // Run the Katalon test suite
-                sh 'katalonc -noSplash -runMode=console -projectPath="https://github.com/JabsRa//Katalon-Test/LoyaltoQAassesment.prj" -reportFolder="Reports" -testSuitePath="Test Suites/Test Suite" -browserType="Web Service" -retry=0 -statusDelay=15'
-            }
-        }
-        
-        stage('Publish Results') {
-            steps {
-                // Publish the test results to Jenkins
-                junit 'Reports/execution/**/junit-report.xml'
+                bat """
+                    cd %KATALON_HOME%
+                    katalonc.exe -noSplash -runMode=console -consoleLog -projectPath="%PROJECT_PATH%" -retry=0 -testSuitePath="%TEST_SUITE_PATH%" -executionProfile="%EXECUTION_PROFILE%" -browserType="%BROWSER_TYPE%"
+                """
             }
         }
     }
