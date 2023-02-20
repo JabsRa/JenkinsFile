@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Generate Report') {
             steps {
-                    bat '"C:\\wkhtmltopdf\\bin\\wkhtmltopdf.exe" "Reports\\index.html" "Reports\\TestReport.pdf"'
+                    bat '"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe" "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\Reports\\index.html" "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\Reports\\Reports\\TestReport.pdf"'
             }
         }
     }
