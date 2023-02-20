@@ -20,8 +20,11 @@ pipeline {
         }
         stage('Generate Report') {
             steps {
-                bat 'katalonc.exe -noSplash -runMode=console -projectPath="%PROJECT_PATH%" -reportFolder="Reports" -reportFileName="index.html" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc"'
-                bat '"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe" "Reports\\index.html" "Reports\\TestReport.pdf"'
+                bat """
+                    cd %KATALON_HOME%
+                    katalonc.exe -noSplash -runMode=console -projectPath="%PROJECT_PATH%" -reportFolder="Reports" -reportFileName="index.html" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc"
+                    "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe" "Reports\\index.html" "Reports\\TestReport.pdf"
+                """
             }
         }
     }
