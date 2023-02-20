@@ -4,6 +4,7 @@ pipeline {
     environment {
         KATALON_HOME = "C:\\Users\\jabal\\Katalon Studio"
         PROJECT_PATH = "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\LoyaltoQAassesment.prj"
+        
         PDF_REPORT = "C:\\Program Files\\wkhtmltopdf\\bin"
         TEST_SUITE_PATH = "Test Suites\\Test Suite"
         EXECUTION_PROFILE = "default"
@@ -23,7 +24,7 @@ pipeline {
             steps {
                 bat """
                     cd %KATALON_HOME%
-                    katalonc.exe -noSplash -runMode=console -projectPath="%PROJECT_PATH%" -reportFolder="Reports" -reportFileName="index.html" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc"
+                    katalon -noSplash -runMode=console -projectPath="%PROJECT_PATH%" -reportFolder="Reports" -reportFileName="index.html" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc"
                     cd %PDF_REPORT%
                     wkhtmltopdf.exe "Reports\\index.html" "Reports\\TestReport.pdf"
                 """
