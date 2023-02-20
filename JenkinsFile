@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run the Katalon test suite
-                sh 'katalonc -noSplash -runMode=console -projectPath="https://github.com//JabsRa//Katalon-Test//LoyaltoQAassesment.prj" -reportFolder="Reports" -testSuitePath="Test Suites/Test Suite" -browserType="Chrome" -retry=0 -statusDelay=15'
+                sh 'katalonc -noSplash -runMode=console -projectPath="https://github.com//JabsRa//Katalon-Test//LoyaltoQAassesment.prj" -reportFolder="Reports" -testSuitePath="Test Suites/Test Suite" -browserType="Web Service" -retry=0 -statusDelay=15'
             }
         }
         
