@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        KATALON_HOME = "C:\\Users\\jabal\\Katalon Studioo"
+        KATALON_HOME = "C:\\Users\\jabal\\Katalon Studio"
         PROJECT_PATH = "C:\\Users\\jabal\\Katalon Studio\\Katalon-Test\\LoyaltoQAassesment.prj"
         TEST_SUITE_PATH = "Test Suites\\Test Suite"
         EXECUTION_PROFILE = "default"
