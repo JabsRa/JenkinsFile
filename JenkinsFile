@@ -18,5 +18,16 @@ pipeline {
                 """
             }
         }
+        stage('Generate Report') {
+            steps {
+                bat 'katalon -noSplash -runMode=console -projectPath="%PROJECT_PATH%" -reportFolder="Reports" -reportFileName="index.html" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc"'
+                bat '"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe" "Reports\\index.html" "Reports\\TestReport.pdf"'
+            }
+        }
+    }
+      post {
+        always {
+            archiveArtifacts artifacts: 'Reports/**'
+        }
     }
 }
