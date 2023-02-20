@@ -15,7 +15,7 @@ pipeline {
             steps {
                 bat """
                     cd %KATALON_HOME%
-                    katalonc.exe -noSplash -runMode=console -consoleLog -projectPath="%PROJECT_PATH%" -retry=0 -testSuitePath="%TEST_SUITE_PATH%"  -reportFolder="Reports" -reportFileName="index.html" -executionProfile="%EXECUTION_PROFILE%" -browserType="%BROWSER_TYPE%" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
+                    katalonc.exe -noSplash -runMode=console -consoleLog -projectPath="%PROJECT_PATH%" -retry=0 -testSuitePath="%TEST_SUITE_PATH%"  -reportFolder="Reports" -reportFileName="index" -executionProfile="%EXECUTION_PROFILE%" -browserType="%BROWSER_TYPE%" -apiKey="34467267-f0c6-4689-88c4-5a1ba8337bbc" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
                 """
             }
         }
